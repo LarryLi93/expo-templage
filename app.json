@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Expo模板",
+    "slug": "expo-template",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "expotemplate",
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
