@@ -8,7 +8,6 @@ const ICONS = {
   profile: { on: 'account', off: 'account-outline' },
 };
 
-// 底部栏：悬浮胶囊样式，与页面顺序保持一致
 export default function TabBar({ state, descriptors, navigation }) {
   const insets = useSafeAreaInsets();
   return (

@@ -3,7 +3,6 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, layout } from '../constants/theme';
 
-// 顶部栏：左侧返回按钮（可选）或 logo（可选）、中间标题、右侧设置入口（可选）
 export default function Header({ title, onBack, onSettingsPress, logo }) {
   const insets = useSafeAreaInsets();
 

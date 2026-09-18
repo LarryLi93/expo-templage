@@ -6,14 +6,10 @@ import { PRIVACY_URL, TERMS_URL } from '../constants/links';
 import { getTranslations } from '../state/translations';
 import { useLanguage } from '../state/language-context';
 
-// 图片宽度占屏幕宽度的比例（与参考 App 一致）
 const IMAGE_WIDTH_SCALE = 0.78;
-// 底部文字面板高度与上缘压住舞台的距离（与参考 App 一致）
 const SHEET_HEIGHT = 276;
 const SHEET_OVERLAP = 24;
 
-// 轮播图使用原 App 素材，按文件名称顺序 01→02→03→04 引用；
-// ratio 为宽高比，scale 为可选的放大系数
 function getSlides(t) {
   return [
     { key: '1', title: t.slide1Title, body: t.slide1Body, image: require('../assets/01.png'), ratio: 870 / 1560 },
@@ -23,10 +19,6 @@ function getSlides(t) {
   ];
 }
 
-// 轮播页：完全参考原 App 的样式、布局与交互——
-// 上方为绿色渐变舞台，图片占满舞台；下方为黑色文字面板，
-// 面板上缘压住舞台（marginTop 为负），包含标题、说明、圆点、渐变按钮和法务链接。
-// 圆点通过 onScroll + onMomentumScrollEnd 实时跟随页面切换；文案随语言切换。
 export default function Carousel({ onFinish }) {
   const { width, height } = useWindowDimensions();
   const { language } = useLanguage();
@@ -34,7 +26,6 @@ export default function Carousel({ onFinish }) {
   const [index, setIndex] = useState(0);
   const updateIndex = (event) => setIndex(Math.round(event.nativeEvent.contentOffset.x / width));
   const slides = getSlides(t);
-  // 舞台高度（屏幕高度扣除面板高度、加上面板压住的距离）
   const stageHeight = height - SHEET_HEIGHT + SHEET_OVERLAP;
 
   return (
@@ -45,7 +36,6 @@ export default function Carousel({ onFinish }) {
         end={{ x: 1, y: 1 }}
         style={styles.stage}
       >
-        {/* 舞台是裸容器，FlatList 直接作为子元素，保证横向滚动正常 */}
         <FlatList
           key={`carousel-${width}`}
           data={slides}
@@ -100,9 +90,6 @@ export default function Carousel({ onFinish }) {
   );
 }
 
-// 单屏：按每张图自己的宽高比和放大系数计算尺寸，
-// 宽度取“屏幕宽的 78%”与“舞台高度放得下”两者的较小值，避免小屏裁剪；
-// marginTop 50 与参考 App 一致（图片整体略偏下，而不是绝对居中）
 function CarouselSlide({ slide, width, stageHeight }) {
   const slideWidth = Math.min(width * (slide.scale ?? IMAGE_WIDTH_SCALE), (stageHeight - 70) * slide.ratio);
   const slideHeight = slideWidth / slide.ratio;

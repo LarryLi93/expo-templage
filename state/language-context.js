@@ -4,7 +4,6 @@ import { DEFAULT_LANGUAGE, isSupportedLanguage } from '../constants/language';
 
 const LANGUAGE_STORAGE_KEY = 'app.language.v1';
 
-// 应用语言：内存中的 language 与 AsyncStorage 保持同步（参考原 App 的做法）。
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {

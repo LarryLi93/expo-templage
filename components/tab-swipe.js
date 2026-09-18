@@ -2,11 +2,9 @@ import { StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { usePathname, useRouter } from 'expo-router';
 
-// 与 app/(tabs)/_layout.js 中声明的页面顺序保持一致
 const TAB_NAMES = ['home', 'profile'];
 const SWIPE_DISTANCE = 48;
 
-// 在页面内左右滑动，切换到相邻 Tab
 export default function TabSwipe({ children }) {
   const router = useRouter();
   const pathname = usePathname();

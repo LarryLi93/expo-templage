@@ -17,7 +17,6 @@ export default function SettingsScreen() {
   const t = getTranslations(language);
   const [confirming, setConfirming] = useState(false);
 
-  // 确认清空：删除引导标记并翻转内存状态（守卫放回轮播页），再回到轮播页
   const clearCache = async () => {
     setConfirming(false);
     await reset();
@@ -72,7 +71,6 @@ export default function SettingsScreen() {
         />
       </View>
 
-      {/* 二次确认弹窗（样式参考原 App） */}
       <Modal
         visible={confirming}
         transparent
@@ -98,7 +96,6 @@ export default function SettingsScreen() {
   );
 }
 
-// 设置项行：标题 + 说明 + 右侧图标
 function SettingRow({ icon, title, description, onPress }) {
   return (
     <Pressable accessibilityRole="button" style={styles.card} onPress={onPress}>

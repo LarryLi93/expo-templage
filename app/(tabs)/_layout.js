@@ -14,7 +14,6 @@ export default function TabLayout() {
 
   return (
     <View style={styles.layout}>
-      {/* 顶部栏放在导航器外面：切换页面时它保持不动，页面在下方滑动 */}
       <Header
         title={title}
         logo={require('../../assets/lifespan-logo-white.png')}

@@ -7,8 +7,6 @@ import { OnboardingProvider, useOnboarding } from '../state/onboarding-context';
 import { LanguageProvider } from '../state/language-context';
 import { colors } from '../constants/theme';
 
-// 启动时从持久化读取引导完成标记：
-// 未完成 → 只开放轮播页；已完成 → 直接进入首页，不再显示轮播页。
 function RootNavigator() {
   const { hydrated, completed } = useOnboarding();
   if (!hydrated) return null;

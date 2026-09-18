@@ -1,13 +1,10 @@
 import { DEFAULT_LANGUAGE, isSupportedLanguage } from '../constants/language';
 
-// 模板全部页面的文案（轮播页、Tab、设置页等）
 export const translations = {
   zh: {
-    // Tab
     tabHome: '首页',
     tabProfile: '资料',
     settings: '设置',
-    // 轮播页（按文件名称 01 打卡 → 02 资料 → 03 首页 → 04 模型的顺序）
     slide1Title: '每天进步一点点',
     slide1Body: '打卡运动、睡眠等习惯，让预测越来越准确',
     slide2Title: '从今天开始',
@@ -19,7 +16,6 @@ export const translations = {
     start: '开始使用',
     privacy: '隐私政策',
     terms: '使用条款',
-    // 设置页
     sectionGeneral: '通用',
     sectionData: '数据',
     sectionAbout: '关于',
@@ -35,11 +31,9 @@ export const translations = {
     confirmClear: '确认清空',
   },
   en: {
-    // Tab
     tabHome: 'Home',
     tabProfile: 'Profile',
     settings: 'Settings',
-    // Carousel (by file name: 01 tracking → 02 profile → 03 home → 04 model)
     slide1Title: 'Improve day by day',
     slide1Body: 'Check in on exercise, sleep and habits to refine your prediction',
     slide2Title: 'Start today',
@@ -51,7 +45,6 @@ export const translations = {
     start: "Let's start",
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
-    // Settings
     sectionGeneral: 'General',
     sectionData: 'Data',
     sectionAbout: 'About',
